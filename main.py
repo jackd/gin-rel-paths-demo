@@ -1,3 +1,4 @@
+# supporting this PR: https://github.com/google/gin-config/pull/25
 import gin
 import os
 
@@ -33,7 +34,7 @@ gin.config.parse_config_file('config/a.gin')
 print('Without enabling,                 f.x = {}'.format(
     gin.query_parameter('f.x')))
 
-gin.config.enable_relative_includes()
+gin.config.enable_relative_includes(highest_priority=False)
 gin.config.parse_config_file('config/a.gin')
 print('After enabling, without priority, f.x = {}'.format(
     gin.query_parameter('f.x')))
